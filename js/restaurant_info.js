@@ -1,6 +1,6 @@
 let restaurant;
 var newMap;
-
+let tabI = 0;
 /**
  * Initialize map as soon as the page is loaded.
  */
@@ -125,6 +125,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  * Create all reviews HTML and add them to the webpage.
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
+  tabI = 9;
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
@@ -163,6 +164,8 @@ createReviewHTML = (review) => {
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
+  li.tabIndex = tabI++;
+  li.setAttribute('aria-label', review.name + ", " + review.date + ", " + rating.innerHTML + ", " + review.comments);
 
   return li;
 }

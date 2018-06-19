@@ -16,11 +16,11 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" aria-label="link to the home" tabindex="1">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+    <ul id="breadcrumb">
+      <li><a href="/" tabindex="2">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -36,25 +36,25 @@
     <!-- End map -->
     <section id="restaurant-info">
       <!-- Beginning restaurant -->
-      <div id="restaurant-container">
-        <h1 id="restaurant-name"></h1>
-        <img id="restaurant-img">
-        <p id="restaurant-cuisine"></p>
-        <p id="restaurant-address"></p>
-        <table id="restaurant-hours"></table>
-      </div>
+      <article id="restaurant-container">
+        <h1 id="restaurant-name" tabindex="3"></h1>
+        <img id="restaurant-img" alt="image of restaurant" tabindex="4">
+        <p id="restaurant-cuisine" tabindex="5"></p>
+        <p id="restaurant-address" tabindex="6"></p>
+        <table id="restaurant-hours" tabindex="7"></table>
+      </article>
       <!-- end restaurant -->
       <!-- Beginning reviews -->
-      <div id="reviews-container">
-        <ul id="reviews-list"></ul>
-      </div>
+      <article id="reviews-container">
+        <ul id="reviews-list" tabindex="8" aria-label="List of reviews"></ul>
+      </article>
       <!-- End reviews -->
     </section>
   </main>
   <!-- End main -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
+  <footer id="footer" tabindex="0" aria-label="Copyright (c) 2017 Restaurant Reviews All Rights Reserved">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->
