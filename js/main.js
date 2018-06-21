@@ -1,8 +1,8 @@
 let restaurants,
   neighborhoods,
-  cuisines
-var newMap
-var markers = []
+  cuisines,
+  newMap;
+let markers = [];
 
 if (navigator.serviceWorker) {
 	navigator.serviceWorker.register('sw.js', { scope: '/'})
@@ -157,7 +157,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
-}
+};
 
 /**
  * Create restaurant HTML.
@@ -186,11 +186,11 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(more);
   li.tabIndex = 0;
   li.setAttribute('aria-label', restaurant.name + ", " + restaurant.neighborhood + ", " + restaurant.address);
 
-  return li
+  return li;
 }
 
 /**
