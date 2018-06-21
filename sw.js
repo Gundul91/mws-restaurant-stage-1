@@ -1,4 +1,4 @@
-let staticCacheName = 'res-static-v2';
+var staticCacheName = 'res-static-v1';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -28,14 +28,13 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
-	event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+	event.waitUntil(caches.keys().then(function(cacheNames) {
 			return Promise.all(
 				cacheNames.filter(function(cacheName) {
 					return cacheName.startsWith('res-') &&
 					cacheName != staticCacheName;
-				}).map(function(cacheName) {
-					return caches.delete(cacheName);
+				}).map( function(cacheName) {
+					return caches.delete( cacheName );
 				})
 			);
 		})
